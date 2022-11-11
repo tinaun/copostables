@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+  </head>
+  <body>
+    <style>
+        body {
+            background-color: rgb(255 249 242);
+        }
+        textarea {
+            width: 600px;
+            height: 300px;
+            font: 12pt monospace;
+        }
+        #output {
+            margin: 20px 0;
+        }
+        #center {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+    <script type="module">
+      // Use ES module import syntax to import functionality from the module
+      // that we have compiled.
+      //
+      // Note that the `default` import is an initialization function which
+      // will "boot" the module and make it ready to use. Currently browsers
+      // don't support natively imported WebAssembly as an ES module, but
+      // eventually the manual initialization won't be required!
+      import init, { process } from '../pkg/chatventure.js';
+
+      async function run() {
+        await init();
+
+        let b = document.getElementById("generate");
+        b.addEventListener("click", process);
+      }
+
+      run();
+    </script>
+    <div id="center">
+    <h1>cohost chatpost generator</h1>
+    <p><a href="../">&lt back</a></p>
+
+    <textarea id="chat">
+ALICE: Hello.
+BOB: Howdy.
+REIMU: Here we are.
+    </textarea>
+    <br>
+    <button id="generate">Generate!</button>
+    <p>preview:</p>
+    <div id="output">
+
+    </div>
+    <p>html to post:</p>
+    <textarea id="code">
+
+    </textarea>
+    </div>
+  </body>
+</html>
