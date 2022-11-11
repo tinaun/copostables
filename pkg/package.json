@@ -1,0 +1,13 @@
+{
+  "name": "copostables",
+  "version": "0.1.0",
+  "license": "MIT OR Apache-2.0",
+  "files": [
+    "copostables_bg.wasm",
+    "copostables.js",
+    "copostables.d.ts"
+  ],
+  "module": "copostables.js",
+  "types": "copostables.d.ts",
+  "sideEffects": false
+}
